@@ -1,0 +1,92 @@
+
+
+#header 
+{
+  width: 100%;
+  padding:20px;
+  background-color: rgb(46, 43, 87);
+  text-align: center;
+}
+
+#header h1 
+{
+  color: rgb(132, 146, 152);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#footer
+{
+  width: 100%;
+  height: 50px;
+  background-color: lightblue;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  line-height: 2;
+  color: gray;
+}
+
+#myform
+{
+  width: 400px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+#admindata
+{
+  padding: 10px;
+  background-color: rgb(83, 83, 121);
+  color: white;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logoutbtn
+{
+  text-decoration: none;
+  color: white;
+  margin-left: 10px;
+}
+
+a.logoutbtn:hover
+{
+  text-decoration: none;
+  color: rgb(123, 198, 217);
+  margin-left: 10px;
+}
+
+#adminarea
+{
+  display: flex;
+  
+}
+
+#adminMenu
+{
+  width: 15%;
+}
+#adminRightData
+{
+  width: 85%;
+}
+
+#admindata{
+  padding: 10px;
+  background-color: rgb(40, 46, 143);
+  color: white;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.logoutbtn{
+  text-decoration: none;
+  color: white;
+  margin-left: 10px;
+}
+
+#adminRightdata{
+  margin-left: 150px;
+}
