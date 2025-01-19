@@ -68,8 +68,7 @@ const assignTask=async (req,res)=>{
          taskduration: taskduration,
          userid:id
       })
-
-      res.status(200).json({msg:"Task succefully assign"});
+      res.status(200).json({ msg: "Task successfully assigned",Task:Task });
 
    } catch (error) {
       console.log(error)

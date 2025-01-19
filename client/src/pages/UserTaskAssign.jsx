@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import axios from 'axios';
@@ -15,6 +15,8 @@ const UserTaskAssign = () => {
     const [taskdetail,setTaskDetail] = useState("");
     const [taskduration,settaskduration] = useState("");
 
+    const navigate= useNavigate()
+
     const taskAssignToUser= async()=>{
 
         try {
@@ -22,7 +24,9 @@ const UserTaskAssign = () => {
          const response = await axios.post(api,{id:id,tasktitle:tasktitle,taskdetail:taskdetail, taskduration:taskduration})
          console.log(response.data)
         message.success(response.data.msg);
-        } catch (error) {
+          navigate("../assigntask")
+
+      } catch (error) {
             console.log(error)
         }
 

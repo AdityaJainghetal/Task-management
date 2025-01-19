@@ -33,15 +33,15 @@ const AdminDashBoard = () => {
 
     <div id='adminarea'>
         <div id='adminmenu'>
-          
-      <Nav defaultActiveKey="/home" className="flex-column">
-      <Nav.Link href="/home">Active</Nav.Link>
+        
+
+    
+<Nav defaultActiveKey="/home" className="flex-column">
+      {/* <Nav.Link href="/home">Active</Nav.Link> */}
       <Nav.Link as={Link} to="createuser">Create user</Nav.Link>
       <Nav.Link as={Link} to="assigntask">Assign Task</Nav.Link>
-      
-    </Nav>
-      
-   
+
+        </Nav>
 
         </div>
 

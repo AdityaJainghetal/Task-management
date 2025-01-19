@@ -90,3 +90,29 @@ a.logoutbtn:hover
 #adminRightdata{
   margin-left: 150px;
 }
+
+#userdisplaylogin{
+  padding: 10px;
+  background-color: aliceblue;
+  color: brown;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+#userDashboardData{
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+#userleftmenu{
+  width: 20%;
+  padding-top: 20px;
+}
+
+#userrightmenu{
+  width: 80%;
+}
