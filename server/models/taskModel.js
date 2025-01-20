@@ -10,7 +10,8 @@ const taskSchema=new mongoose.Schema({
     taskdetail:String,
 
 
-    taskduration:Number,
+    taskduration:String,
+    status: { type:String, default: "Incomplete"},
 
     userid : { type: mongoose.Types.ObjectId, ref: "user" } 
 

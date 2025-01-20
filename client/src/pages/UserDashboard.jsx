@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Nav from 'react-bootstrap/Nav';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { Outlet } from 'react-router-dom';
 
@@ -8,16 +8,34 @@ import { Outlet } from 'react-router-dom';
 const UserDashboard = () => {
     const [username,Setusername] = useState("");
     const [email,Setemail] =  useState("")
-
+    const navigate= useNavigate()
     useEffect(()=>{
+
+      if(!localStorage.getItem("username")){
+        navigate("/home ")
+      }
+
+
+
+
         Setusername(localStorage.getItem("username"))
         Setemail(localStorage.getItem("useremail"))
     },[])
 
+
+
+    const userlogout=()=>{
+      localStorage.clear()
+      navigate("/home")
+    }
+
+
+
+
   return (
     <>
     <div id="userdisplaylogin">
-            Welcome to : {username} Email: {email}
+            Welcome to : {username} Email: {email} | <a href="" onClick={userlogout}>Logout</a> 
     </div>
 
     <div id='userDashboardData'>

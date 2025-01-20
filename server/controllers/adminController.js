@@ -1,6 +1,7 @@
 const AdminModel = require("../models/adminModel");
 const UserModel = require("../models/userModel");
-const TaskModel = require("../models/taskModel")
+const TaskModel = require("../models/taskModel");
+const { response } = require("express");
 
 
 const adminLogin = async(req,res)=>{
@@ -50,8 +51,6 @@ const createUser =async(req,res)=>{
       // console.log(error)
    }
   
-   console.log(req.body)
-   res.send("okkk")
 }
 
 const UserDatashow=async(req,res)=>{
@@ -61,6 +60,8 @@ const UserDatashow=async(req,res)=>{
 
 const assignTask=async (req,res)=>{
    try {
+      console.log(req.body);
+      
    const {id,tasktitle,taskdetail,taskduration}= req.body
       const Task = await TaskModel.create({
          tasktitle:tasktitle,
@@ -68,22 +69,42 @@ const assignTask=async (req,res)=>{
          taskduration: taskduration,
          userid:id
       })
-      res.status(200).json({ msg: "Task successfully assigned",Task:Task });
+      res.status(200).json({ msg: "Task successfully assigned",Task });
 
    } catch (error) {
       console.log(error)
    }
 
 
-
-   console.log(req.body);
-   res.send("okk")
 }
+
+
+const DisplayTaskUser =async(req,res)=>{
+
+      try {
+         const Data = await TaskModel.find().populate("userid")
+         res.status(200).send(Data)
+      } catch (error) {
+         console.log(error)
+         
+      }
+}
+
+const DeleteUserTask =async(req,res)=>{
+    const {id} = req.body;
+    await TaskModel.findByIdAndDelete(id);
+
+    res.status(200).send("Task deleted")
+}
+
+
 
 
 module.exports ={
    adminLogin,
    createUser,
    UserDatashow,
-   assignTask
+   assignTask,
+   DisplayTaskUser,
+   DeleteUserTask
 }

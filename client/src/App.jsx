@@ -8,6 +8,7 @@ import UserTaskAssign from "./pages/UserTaskAssign";
 import UserDashboard from "./pages/UserDashboard";
 import MyTask from './pages/MyTask';
 import Changepassword from "./pages/Changepassword";
+import DisplayTask from "./pages/DisplayTask";
 
 const App=()=>{
   return(
@@ -21,6 +22,8 @@ const App=()=>{
          <Route path="createuser" element={<Createuser/>}/>
          <Route path="assigntask" element={<AssignTask/>}/>
          <Route path="usertaskassign/:id" element={<UserTaskAssign/>}/>
+         <Route path="displaytask" element={<DisplayTask/>}/>
+       
          </Route>
          <Route path="userdashboard" element={<UserDashboard/>}>
           <Route path="mytask" element={<MyTask/>}/>

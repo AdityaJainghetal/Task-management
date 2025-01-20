@@ -31,21 +31,22 @@ const AdminDashBoard = () => {
         <a href="" className='logoutbtn' onClick={Logout}>Logout</a>|  
     </div>
 
-    <div id='adminarea'>
-        <div id='adminmenu'>
+   
+       
         
 
-    
-<Nav defaultActiveKey="/home" className="flex-column">
-      {/* <Nav.Link href="/home">Active</Nav.Link> */}
-      <Nav.Link as={Link} to="createuser">Create user</Nav.Link>
-      <Nav.Link as={Link} to="assigntask">Assign Task</Nav.Link>
+     <Nav>
+ {/* <Nav.Link href="/home">Active</Nav.Link> */}
+ <Nav.Link style={{cursor:"pointer"}} as={Link}  to={"createuser"}>Create user</Nav.Link>
+      <Nav.Link style={{cursor:"pointer"}} as={Link} to={"assigntask"}>Assign Task</Nav.Link>
+      <Nav.Link style={{cursor:"pointer"}} as={Link} to={"displaytask"}>Display Task</Nav.Link>
 
-        </Nav>
+     </Nav>
+     
 
-        </div>
+        
 
-    </div>
+
 
     <div id='adminRightdata' style={{textAlign:"center", paddingLeft:"300px",width:"50%", margin:"auto",position:"absolute", top:"200px"}}>
 

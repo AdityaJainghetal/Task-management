@@ -7,5 +7,11 @@ route.post("/createuser", adminController.createUser)
 route.get("/userdatashow", adminController.UserDatashow)
 route.post("/assigntask", adminController.assignTask)
 
+route.get("/displaytaskuser", adminController.DisplayTaskUser);
+route.get("/deleteusertask", adminController.DeleteUserTask);
+
+
+
+
 
 module.exports=route;
