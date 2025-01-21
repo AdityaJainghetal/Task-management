@@ -16,8 +16,9 @@ const Home=()=>{
         let api="http://localhost:8000/admin/adminlogin";
         try {
             const response= await axios.post(api, {userid:userid, password:password});
-            
-          if(response.status==200){
+                console.log(response);
+                
+          if(response){
             localStorage.setItem("adminname", response.data.name)
             navigate("/admindashboard")
           }

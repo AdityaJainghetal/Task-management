@@ -1,29 +1,31 @@
 const AdminModel = require("../models/adminModel");
 const UserModel = require("../models/userModel");
 const TaskModel = require("../models/taskModel");
-const { response } = require("express");
+// const { response } = require("express");
 
 
 const adminLogin = async(req,res)=>{
   const {userid, password} =req.body;
   console.log(req.body);
   
-  try {
+//   try {
    const Admin = await AdminModel.findOne({userid})
-    
-   if(!Admin){
-      res.status(400).send({msg:"Invalid user id"});
-   }
-   if(Admin.password != password){
-      res.status(400).send({msg:"password is incorrect"})
-   }
-   res.send(200).send(Admin)
-   // console.log(Admin);
-   res.send("ok")
+   console.log(Admin);
    
-  } catch (error) {
-      // console.log(error)
-  }
+    res.send(Admin)
+//    if(!Admin){
+//       res.status(400).send({msg:"Invalid user id"});
+//    }
+//    if(Admin.password != password){
+//       res.status(400).send({msg:"password is incorrect"})
+//    }
+//    res.send(200).send(Admin)
+//    // console.log(Admin);
+//    // res.send("ok")
+   
+//   } catch (error) {
+//       // console.log(error)
+//   }
 
    
 }
